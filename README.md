@@ -6,6 +6,10 @@ A step-by-step guide based on ["The Dead-Simple Step-By-Step Guide for Front-End
 by Christopher Buecheler  
 
 
+The crib sheet uses [Embedded JavaScript (EJS)](https://ejs.co).
+EJS is a simple templating language that lets you generate HTML markup with plain JavaScript.
+The Express default templating language is Jade, but this has been deprecated in favour of Pug, which is an indentation-based markup.
+
 The name of the project for this crib_sheet is ```nodetest1```
 
 **Install node and NPM**
@@ -29,6 +33,8 @@ npm install -g express-generator
 Navigate to the folder that will store the project.
 
 The name of the project for this crib sheet is ```nodetest1```
+
+Note that the command below also specifies that views will be rendered with EJS.
 
 ```
 express --view="ejs" nodetest1
@@ -63,4 +69,26 @@ There should be a "Welcome to Express" page
 
 This is the heart of the app.
 
-It creates a number of javascript variables
+It creates a number of javascript variables and links them to dependancies, packages, node functions and routes.
+
+It instantiates Express and assigns the app to it:
+```
+var app = express();
+```
+
+It also tells the app where to find its views:
+```
+app.set('views', path.join(__dirname, 'views'));
+```
+
+And specifies which engine to use to render the views (in this example, EJS):
+```
+app.set('view engine', 'ejs');
+```
+
+The rest of the code sets a number of conditions to get the app up and running.
+
+
+**index.js**
+
+The top-level route should be index.js, found in the routes folder: ```nodetest1\routes\index.js```
