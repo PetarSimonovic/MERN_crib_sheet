@@ -12,4 +12,4 @@ Install the latest version from the [Node.js](https://nodejs.org/en/)
 
 If there are any issues with permissions, use ```sudo chown``` to set the superuser ownership:
 
-``sudo chown -R $USER /usr/local/lib/node_module
+```sudo chown -R $USER /usr/local/lib/node_module
