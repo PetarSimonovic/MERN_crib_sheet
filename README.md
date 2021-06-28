@@ -132,6 +132,30 @@ router.get('/helloworld', function(req, res) {
 
 Go to the Views folder and save a version of ```index.ejs``` renamed as ```helloworld.ejs```
 
-The title variable is set in ```index.js```
+Note that the ```title``` variable is set in ```index.js```
 
-run ```npm start``` again and visit ```http://localhost:3000/helloworld/``` to view the new page
+If the server is still running, stop it using ```CTRL-C```
+
+run ```npm start``` again and visit ```http://localhost:3000/helloworld/``` to view the new page.
+
+Note: changes to EJS templates do not require a server restart, but changes to a js file, such as app.js or the route files, require a restart.
+
+##Set up MongoDB
+
+It's easiest to set up MongoDB using Homebrew.
+
+Check it's up to date first using ```brew update```
+
+Install the mongo 'tap': ```brew tap mongodb/brew```
+
+Then install mongodb-community (the free version of mongodb): ```brew install mongodb-community@4.4```
+
+Create a database in which MongoDB can store its data.
+
+MongoDB suggests saving it a folder called ```data``` and naming the file ```db```
+
+start MongoDB as a service:
+
+```
+brew services start mongodb-community
+```
