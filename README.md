@@ -6,6 +6,8 @@ A step-by-step guide based on ["The Dead-Simple Step-By-Step Guide for Front-End
 by Christopher Buecheler  
 
 
+The name of the project for this crib_sheet is ```nodetest1```
+
 **Install node and NPM**
 
 Install the latest version from the [Node.js](https://nodejs.org/en/)
@@ -26,8 +28,10 @@ npm install -g express-generator
 
 Navigate to the folder that will store the project.
 
+The name of the project for this crib sheet is ```nodetest1```
+
 ```
-express --view="ejs" project_name
+express --view="ejs" nodetest1
 ```
 
 **Install MongoDB and Monk**
@@ -54,3 +58,9 @@ Run ```npm start```
 Go to ```http://localhost:3000```
 
 There should be a "Welcome to Express" page
+
+**app.js**
+
+This is the heart of the app.
+
+It creates a number of javascript variables
