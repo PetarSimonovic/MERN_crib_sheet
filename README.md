@@ -44,3 +44,13 @@ npm install --save mongodb
 **Install all dependancies**
 
 Use ```npm install``` to install all of the dependancies listed in the pacakge.json file
+
+This should create a ```node_modules``` directory
+
+**Test the app**
+
+Run ```npm start```
+
+Go to ```http://localhost:3000```
+
+There should be a "Welcome to Express" page
