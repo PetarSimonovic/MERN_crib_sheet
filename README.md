@@ -29,3 +29,14 @@ Navigate to the folder that will store the project.
 ```
 express --view="ejs" project_name
 ```
+
+**Install MongoDB and Monk**
+
+Use npm to isntall MongoDB and Monk.
+
+The ```--save``` command will add them to the package.json dependancies.
+
+```
+npm install --save monk
+npm install --save mongodb
+```
