@@ -194,7 +194,32 @@ db.usercollection.insert(newstuff);
 
 Tell ```app.js``` to use Monk to talk to Mongo and that the database is located at ```localhost:27017/nodetest1```:
 
+27017 is the default port for MongoDB
+
+Define the following at the top of the ```app.js``` file.
+
 ```JavaScript
 var monk = require('monk');
 var db = monk('localhost:27017/nodetest1');
+```
+
+Furtherdown the file are some `app.use` statements for Express.
+
+```JavaScript
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+```
+
+They provide custom functions that the rest of the app can use.
+
+The db `app.use` statements need to come before the route `app.use`, since the routes will make use of the db.
+
+Add the following above the 'indexRouter' and 'usersRouters' statements detailed above.
+
+```JavaScript
+// Make our db accessible to our router
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
 ```
