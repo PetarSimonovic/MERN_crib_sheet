@@ -159,3 +159,15 @@ start MongoDB as a service:
 ```
 brew services start mongodb-community
 ```
+
+##Run Mongo
+
+Run the server then, in a separate terminal window, type ```mongo```.
+
+It should report the MongoDB Shell version and connect to the database server. (If it fails, try restarting the computer.)
+
+Tell Mongo which database to use - for this cribsheet it's nodetest1:
+
+```
+use nodetest1
+```
