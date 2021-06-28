@@ -164,10 +164,21 @@ brew services start mongodb-community
 
 Run the server then, in a separate terminal window, type ```mongo```.
 
-It should report the MongoDB Shell version and connect to the database server. (If it fails, try restarting the computer.)
+It should launch the Mongo client, report the MongoDB Shell version and connect to the database server. (If it fails, try restarting the computer.)
 
 Tell Mongo which database to use - for this cribsheet it's nodetest1:
 
 ```
 use nodetest1
 ```
+
+
+The command below will create a collection called ```usercollection``` within the ```db``` that it is using (```nodetest1```). It will then append an entry to that collection and add a unique identifier ID number for the entry.
+
+```
+db.usercollection.insert({ "username" : "testuser1", "email" : "testuser1@testdomain.com" })
+```
+
+If it's worked, Mongo will respond with ```WriteResult({ "nInserted" : 1 })```
+
+Use ```db.usercollection.find().pretty()``` to display what's in it. (the ```.pretty()``` command adds line breaks to the output )
