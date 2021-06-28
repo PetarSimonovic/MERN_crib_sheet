@@ -189,3 +189,12 @@ Mongo can also define an array with multiple objects then append it to a collect
 newstuff = [{ "username" : "testuser2", "email" : "testuser2@testdomain.com" }, { "username" : "testuser3", "email" : "testuser3@testdomain.com" }]
 db.usercollection.insert(newstuff);
 ```
+
+##Connect Node to MongoDB
+
+Tell ```app.js``` to use Monk to talk to Mongo and that the database is located at ```localhost:27017/nodetest1```:
+
+```JavaScript
+var monk = require('monk');
+var db = monk('localhost:27017/nodetest1');
+```
