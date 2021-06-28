@@ -40,3 +40,7 @@ The ```--save``` command will add them to the package.json dependancies.
 npm install --save monk
 npm install --save mongodb
 ```
+
+**Install all dependancies**
+
+Use ```npm install``` to install all of the dependancies listed in the pacakge.json file
