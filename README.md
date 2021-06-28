@@ -88,6 +88,14 @@ app.set('view engine', 'ejs');
 
 The rest of the code sets a number of conditions to get the app up and running.
 
+It also tells the app to make it look as though content is coming from the top level:
+
+```
+app.use(express.static(path.join(__dirname, 'public')));
+```
+
+The line above means that even though images are located in ```nodetest1\public\images``` they are accessed via ```localhost:3000/images```
+
 
 **index.js**
 
