@@ -182,3 +182,10 @@ db.usercollection.insert({ "username" : "testuser1", "email" : "testuser1@testdo
 If it's worked, Mongo will respond with ```WriteResult({ "nInserted" : 1 })```
 
 Use ```db.usercollection.find().pretty()``` to display what's in it. (the ```.pretty()``` command adds line breaks to the output )
+
+Mongo can also define an array with multiple objects then append it to a collection, eg:
+
+```
+newstuff = [{ "username" : "testuser2", "email" : "testuser2@testdomain.com" }, { "username" : "testuser3", "email" : "testuser3@testdomain.com" }]
+db.usercollection.insert(newstuff);
+```
