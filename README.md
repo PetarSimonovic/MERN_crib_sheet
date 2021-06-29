@@ -12,7 +12,7 @@ The Express default templating language is Jade, but this has been deprecated in
 
 The name of the project for this crib_sheet is ```nodetest1```
 
-##Install node and NPM
+## Install node and NPM
 
 Install the latest version from the [Node.js](https://nodejs.org/en/)
 
@@ -22,13 +22,13 @@ If there are any issues with permissions, use ```sudo chown``` to set the superu
 sudo chown -R $USER /usr/local/lib/node_module
 ```
 
-##Install Express
+## Install Express
 
 ```
 npm install -g express-generator
 ```
 
-##Create an Express Project
+## Create an Express Project
 
 Navigate to the folder that will store the project.
 
@@ -40,7 +40,7 @@ Note that the command below also specifies that views will be rendered with EJS.
 express --view="ejs" nodetest1
 ```
 
-##Install MongoDB and Monk
+## Install MongoDB and Monk
 
 Use npm to isntall MongoDB and Monk.
 
@@ -51,13 +51,13 @@ npm install --save monk
 npm install --save mongodb
 ```
 
-##Install all dependancies
+## Install all dependancies
 
 Use ```npm install``` to install all of the dependancies listed in the pacakge.json file
 
 This should create a ```node_modules``` directory
 
-##App is now created
+## App is now created
 
 Run ```npm start```
 
@@ -119,7 +119,7 @@ It uses ```router``` when an attempt is made to HTTP get the top level directory
 
 Note: router is then exported back to the app with ```module.exports = router;```
 
-##Add new page
+## Add new page
 
 To add another page, add the following to the index.js file before the export command at the end:
 
@@ -140,7 +140,7 @@ run ```npm start``` again and visit ```http://localhost:3000/helloworld/``` to v
 
 Note: changes to EJS templates do not require a server restart, but changes to a js file, such as app.js or the route files, require a restart.
 
-##Set up MongoDB
+## Set up MongoDB
 
 It's easiest to set up MongoDB using Homebrew.
 
@@ -160,7 +160,7 @@ start MongoDB as a service:
 brew services start mongodb-community
 ```
 
-##Run Mongo
+## Run Mongo
 
 Run the server then, in a separate terminal window, type ```mongo```.
 
@@ -190,7 +190,7 @@ newstuff = [{ "username" : "testuser2", "email" : "testuser2@testdomain.com" }, 
 db.usercollection.insert(newstuff);
 ```
 
-##Connect Node to MongoDB
+## Connect Node to MongoDB
 
 Tell ```app.js``` to use Monk to talk to Mongo and that the database is located at ```localhost:27017/nodetest1```:
 
@@ -224,7 +224,7 @@ app.use(function(req,res,next){
 });
 ```
 
-##Display data from database
+## Display data from database
 
 Add a new route to index.js
 
