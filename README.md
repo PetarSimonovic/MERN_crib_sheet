@@ -226,7 +226,7 @@ app.use(function(req,res,next){
 
 ## Display data from database
 
-Add a new route to index.js
+Add a new route to ```index.js```
 
 ```JavaScript
 /* GET Userlist page. */
@@ -246,3 +246,67 @@ router.get('/userlist', function(req, res) {
     });
 });
 ```
+
+Create a `userlist` view in the views folder:
+
+- open `index.ejs`
+- save it as `userlist.ejs`
+
+Change the HTML to:
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>User List</h1>
+    <ul>
+      <%
+        var list = '';
+        for (i = 0; i < userlist.length; i++) {
+          list += '<li><a href="mailto:' + userlist[i].email + '">' + userlist[i].username + '</a></li>';
+        }
+      %>
+      <%- list %>
+    </ul>
+  </body>
+</html>
+```
+
+## Adding data to the database
+
+Add a user form route to `index.js`
+
+```JavaScript
+/* GET New User page. */
+router.get('/newuser', function(req, res) {
+    res.render('newuser', { title: 'Add New User' });
+})
+```
+
+Create a new view, called `newuser.ejs`, in the Views folder:
+
+```JavaScript
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add User</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form id="formAddUser" name="adduser" method="post" action="/adduser">
+      <input id="inputUserName" type="text" placeholder="username" name="username" />
+      <input id="inputUserEmail" type="text" placeholder="email" name="useremail" />
+      <button id="btnSubmit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
+```
+
+Visit `http://localhost:3000/newuser` to see the new user page
+
+ 
