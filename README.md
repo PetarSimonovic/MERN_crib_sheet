@@ -223,3 +223,26 @@ app.use(function(req,res,next){
     next();
 });
 ```
+
+##Display data from database
+
+Add a new route to index.js
+
+```JavaScript
+/* GET Userlist page. */
+router.get('/userlist', function(req, res) {
+
+  //Extract the db object that has been passed through the http request
+    var db = req.db;
+
+  //Tell the db which collection to use  
+    var collection = db.get('usercollection');
+
+  //Search through the collection and return results as the variable 'docs', then render 'userlist' using 'docs'
+    collection.find({},{},function(e,docs){
+        res.render('userlist', {
+            "userlist" : docs
+        });
+    });
+});
+```
