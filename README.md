@@ -373,7 +373,13 @@ Delete the React default files using ```rm App.css index.css App.test.js service
 Install the following dependencies:
 
 **axios:**  A Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser
+
 **bootstrap:** Open-source toolkit and front-end component library  for developing with HTML, CSS, and JS.
+
+**styled-components:** It allows you to write actual CSS code to style your components.
+
 **react-table:** A lightweight, fast, and extendable data grid built for React.
+
 **react-router-dom:** DOM bindings for React Routers.
 
+```yarn add styled-components react-table react-router-dom axios bootstrap```
