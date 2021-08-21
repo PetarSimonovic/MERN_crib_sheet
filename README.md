@@ -354,7 +354,10 @@ These are desktop applications that can test routes and MongoDB
 
 ## Set up the front-end
 
-Rerturn to the root directory and set up react
+### Set up React
+
+
+Rerturn to the root directory and set up react in a new folder called 'client'
 
 ```
 $ npx create-react-app client
@@ -363,3 +366,4 @@ $ npx create-react-app client
 
 Once installed, make sure that react is on a different port to the back-end (ie, in example above the port is 3000 for the backend)
 
+Run ```yarn start``` in the client folder and the React default page should load.
