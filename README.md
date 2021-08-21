@@ -367,3 +367,5 @@ $ npx create-react-app client
 Once installed, make sure that react is on a different port to the back-end (ie, in example above the port is 3000 for the backend)
 
 Run ```yarn start``` in the client folder and the React default page should load.
+
+Delete the React default files using ```rm App.css index.css App.test.js serviceWorker.js```
