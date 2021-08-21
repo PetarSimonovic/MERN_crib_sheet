@@ -63,7 +63,7 @@ Go to localhost/3000 in a browser and you should see "Hello world!"
 ## Install MongoDB
 
 ```
-brew tap mongodb/brew
+$ brew tap mongodb/brew
 $ brew install mongodb-community
 $ brew services start mongodb-community
 ```
