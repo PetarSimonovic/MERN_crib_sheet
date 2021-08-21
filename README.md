@@ -14,22 +14,32 @@ If there are any issues with permissions, use ```sudo chown``` to set the superu
 sudo chown -R $USER /usr/local/lib/node_module
 ```
 
+```
+mkdir app-name
+cd app-name
+```
+
 ## Set up the back-end
 
 ### Installation
 
-Set up the folder and install:
+Create and cd into a 'server' folder 
+
+run ```npm init -y```
+
+Install the following dependencies:
 
 **Express:** The server framework (The E in MERN).
+
 **Body Parser:** Responsible to get the body off of network requests.
+
 **Nodemon:** Restarts the server when it detects changes (for a better dev experience).
+
 **Cors:** A package that provides Connect/Express middleware that can be used to enable CORS with various options.
+
 **Mongoose:** An elegant MongoDB object modeling for node.js
 
 ```
-mkdir app-name
-cd app-name
-npm init -y
 npm install express body-parser cors mongoose nodemon
 
 ```
