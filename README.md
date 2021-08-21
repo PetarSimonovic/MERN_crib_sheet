@@ -79,6 +79,6 @@ $ brew services start mongodb-community
 $ ps aux | grep -v grep | grep mongod
 ```
 
-Use ```Mongosh``` to run mongo.
+Use ```mongosh``` to run mongo.
 
-Type ```show dbs``` to show existing databases
+Type ```use DATABASE_NAME ``` to create a database
