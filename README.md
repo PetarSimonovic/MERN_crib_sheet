@@ -62,6 +62,15 @@ Go to localhost/3000 in a browser and you should see "Hello world!"
 
 ## Install MongoDB
 
+If a previous version of MongoDB is running/creating issues then stop and uninstall it:
+
+```
+$ brew services stop mongodb
+$ brew uninstall mongodb
+```
+
+Otherwise:
+
 ```
 $ brew tap mongodb/brew
 $ brew install mongodb-community
