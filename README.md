@@ -136,3 +136,27 @@ app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
 
 
 run ```nodemon index.js``` to check everything is working (use ```nodemon index.js``` rather than ```node index.js``` as nodemon will monitor changes and update)
+
+## Create models
+
+In the server folder, create a 'models' directory that will store the schema for the database.
+
+In 'models' create a .js file, and give it an appropriate name for the project. 
+
+Eg, a movie database could be called 'movie-models.js' and contain the following:
+
+```js
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const Movie = new Schema(
+    {
+        name: { type: String, required: true },
+        time: { type: [String], required: true },
+        rating: { type: Number, required: true },
+    },
+    { timestamps: true },
+)
+
+module.exports = mongoose.model('movies', Movie)
+```
