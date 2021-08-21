@@ -133,3 +133,6 @@ app.get('/', (req, res) => {
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
 
 ```
+
+
+run ```nodemon index.js``` to check everything is working (use ```nodemon index.js``` rather than ```node index.js``` as nodemon will monitor changes and update)
