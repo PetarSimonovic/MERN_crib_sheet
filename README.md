@@ -60,7 +60,7 @@ If everything is set up properly you should see a message stating "Server runnin
 Go to localhost/3000 in a browser and you should see "Hello world!"
 
 
-## Install MongoDB
+## Set-up MongoDB
 
 If a previous version of MongoDB is running/creating issues then stop and uninstall it:
 
@@ -82,3 +82,10 @@ $ ps aux | grep -v grep | grep mongod
 Use ```mongosh``` to run mongo.
 
 Type ```use DATABASE_NAME ``` to create a database
+
+To connect Mongo with the server, create a directory called 'db' in the server folder, and add a file called index.js:
+
+```
+$ mkdir db
+$ touch index.js
+```
