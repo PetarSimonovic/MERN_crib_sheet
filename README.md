@@ -170,7 +170,7 @@ In 'controllers' add a file called 'PROJECT_NAME-ctrl.js'
 
 The controller file below contains the CRUD code for a movie project:
 
-```
+```js
 const Movie = require('../models/movie-model')
 
 createMovie = (req, res) => {
