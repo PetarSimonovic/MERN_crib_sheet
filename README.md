@@ -343,3 +343,9 @@ app.get('/', (req, res) => {
 
 app.use('/api', movieRouter)
 ```
+
+## Test the app
+
+download and install Postman (https://www.postman.com/downloads/) and Robo3T (https://robomongo.org/). 
+
+These are desktop applications that can test routes and MongoDB
