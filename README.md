@@ -383,3 +383,150 @@ Install the following dependencies:
 **react-router-dom:** DOM bindings for React Routers.
 
 ```yarn add styled-components react-table react-router-dom axios bootstrap```
+
+In the src folder create directories that will manage the various front-end aspects of the app. 
+
+
+
+```
+$ cd src
+$ mkdir api app components pages style
+```
+
+Each folder also needs an index.js file. Move the App.js file to the app directory and rename it to 'index.js', then create the others:
+
+```
+$ touch api/index.js components/index.js pages/index.js style/index.js
+```
+
+### Update src/index.js
+
+**src/index.js**
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './app'
+
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+### Create components
+
+Create jsx files in the components folder
+
+```
+$ touch components/NavBar.jsx components/Logo.jsx components/Links.jsx
+```
+
+Use the following as examples for the styled up components (note: the backticks are necessary for the style variables)
+
+**logo.jsx** example
+
+```js
+import React, { Component } from 'react'
+import styled from 'styled-components'
+
+import logo from '../logo.svg'
+
+const Wrapper = styled.a.attrs({
+    className: 'navbar-brand',
+})``
+
+class Logo extends Component {
+    render() {
+        return (
+            <Wrapper href="https://example.com">
+                <img src={logo} width="50" height="50" alt="sambarros.com" />
+            </Wrapper>
+        )
+    }
+}
+
+export default Logo
+```
+
+**links.jsx**
+
+```js
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+const Collapse = styled.div.attrs({
+    className: 'collpase navbar-collapse',
+})``
+
+const List = styled.div.attrs({
+    className: 'navbar-nav mr-auto',
+})``
+
+const Item = styled.div.attrs({
+    className: 'collpase navbar-collapse',
+})``
+
+class Links extends Component {
+    render() {
+        return (
+            <React.Fragment>
+                <Link to="/" className="navbar-brand">
+                    My first MERN Application
+                </Link>
+                <Collapse>
+                    <List>
+                        <Item>
+                            <Link to="/movies/list" className="nav-link">
+                                List Movies
+                            </Link>
+                        </Item>
+                        <Item>
+                            <Link to="/movies/create" className="nav-link">
+                                Create Movie
+                            </Link>
+                        </Item>
+                    </List>
+                </Collapse>
+            </React.Fragment>
+        )
+    }
+}
+
+export default Links
+```
+
+**navbar.jsx**
+
+```js
+import React, { Component } from 'react'
+import styled from 'styled-components'
+
+import Logo from './Logo'
+import Links from './Links'
+
+const Container = styled.div.attrs({
+    className: 'container',
+})``
+
+const Nav = styled.nav.attrs({
+    className: 'navbar navbar-expand-lg navbar-dark bg-dark',
+})`
+    margin-bottom: 20 px;
+`
+
+class NavBar extends Component {
+    render() {
+        return (
+            <Container>
+                <Nav>
+                    <Logo />
+                    <Links />
+                </Nav>
+            </Container>
+        )
+    }
+}
+
+export default NavBar
+```
+
+
