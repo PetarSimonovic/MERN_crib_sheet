@@ -649,3 +649,18 @@ class MoviesInsert extends Component {
 
 export default MoviesInsert
 ```
+
+
+ As with the components, import then export all of these from the index.js file in the pages folder, making them easier to import into the app:
+ 
+ ```js
+ 
+import MoviesList from './MoviesList'
+import MoviesInsert from './MoviesInsert'
+import MoviesUpdate from './MoviesUpdate'
+
+export { MoviesList, MoviesInsert, MoviesUpdate }
+
+```
+
+the NavBar links should now work
