@@ -89,3 +89,20 @@ To connect Mongo with the server, create a directory called 'db' in the server f
 $ mkdir db
 $ touch index.js
 ```
+
+index.js should contain:
+
+```js
+
+const mongoose = require('mongoose')
+
+mongoose
+    .connect('mongodb://127.0.0.1:27017/cinema', { useNewUrlParser: true })
+    .catch(e => {
+        console.error('Connection error', e.message)
+    })
+
+const db = mongoose.connection
+
+module.exports = db
+```
