@@ -369,3 +369,11 @@ Once installed, make sure that react is on a different port to the back-end (ie,
 Run ```yarn start``` in the client folder and the React default page should load.
 
 Delete the React default files using ```rm App.css index.css App.test.js serviceWorker.js```
+
+Install the following dependencies:
+
+**axios:**  A Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser
+**bootstrap:** Open-source toolkit and front-end component library  for developing with HTML, CSS, and JS.
+**react-table:** A lightweight, fast, and extendable data grid built for React.
+**react-router-dom:** DOM bindings for React Routers.
+
