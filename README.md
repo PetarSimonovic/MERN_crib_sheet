@@ -143,7 +143,7 @@ In the server folder, create a 'models' directory that will store the schema for
 
 In 'models' create a .js file, and give it an appropriate name for the project. 
 
-Eg, a movie database could be called 'movie-models.js' and contain the following:
+Eg, the file for a movie database could be called 'movie-model.js' and contain the following:
 
 ```js
 const mongoose = require('mongoose')
