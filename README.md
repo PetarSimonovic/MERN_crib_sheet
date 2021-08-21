@@ -57,9 +57,15 @@ run ```node index.js```
 
 If everything is set up properly you should see a message stating "Server running on port 3000"
 
-Go to localhost/3000 and you should see "Hello world!"
+Go to localhost/3000 in a browser and you should see "Hello world!"
 
 
+## Install MongoDB
 
+```
+brew tap mongodb/brew
+$ brew install mongodb-community
+$ brew services start mongodb-community
+```
 
  
