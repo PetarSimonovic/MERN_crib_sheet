@@ -15,6 +15,8 @@ sudo chown -R $USER /usr/local/lib/node_module
 
 ## Set up the back-end
 
+### Installation
+
 Set up the folder and install:
 
 **Express:** The server framework (The E in MERN).
@@ -60,7 +62,7 @@ If everything is set up properly you should see a message stating "Server runnin
 Go to localhost/3000 in a browser and you should see "Hello world!"
 
 
-## Set-up MongoDB
+### Set-up MongoDB
 
 If a previous version of MongoDB is running/creating issues then stop and uninstall it:
 
@@ -137,7 +139,7 @@ app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
 
 run ```nodemon index.js``` to check everything is working (use ```nodemon index.js``` rather than ```node index.js``` as nodemon will monitor changes and update)
 
-## Create models
+### Create models
 
 In the server folder, create a 'models' directory that will store the schema for the database.
 
@@ -160,7 +162,7 @@ const Movie = new Schema(
 
 module.exports = mongoose.model('movies', Movie)
 ```
-## Routes and controllers
+### Routes and controllers
 
 In the server folder create two more directories: 'routes' and 'controllers'.
 
@@ -344,8 +346,10 @@ app.get('/', (req, res) => {
 app.use('/api', movieRouter)
 ```
 
-## Test the app
+### Test the app
 
 download and install Postman (https://www.postman.com/downloads/) and Robo3T (https://robomongo.org/). 
 
 These are desktop applications that can test routes and MongoDB
+
+## Set up the front-end
