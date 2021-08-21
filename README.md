@@ -72,9 +72,13 @@ $ brew uninstall mongodb
 Otherwise:
 
 ```
+$ sudo chown -R $(whoami) $(brew --prefix)/*
 $ brew tap mongodb/brew
 $ brew install mongodb-community
 $ brew services start mongodb-community
+$ ps aux | grep -v grep | grep mongod
 ```
 
- 
+Use ```Mongosh``` to run mongo.
+
+Type ```show dbs``` to show existing databases
