@@ -1,6 +1,7 @@
 # MERN Crib Sheet
-A crib sheet for setting up a web app using MongoDB, Express, Node and React
+A crib sheet for setting up a web app using MongoDB, Express, Node and React.
 
+This builds a simple movie-tracking CRUD app cribbed from [How to create your first MERN](https://medium.com/swlh/how-to-create-your-first-mern-mongodb-express-js-react-js-and-node-js-stack-7e8b20463e66) by Sam Barros
 
 
 ## Install node and NPM
@@ -529,4 +530,122 @@ class NavBar extends Component {
 export default NavBar
 ```
 
+Export the above elements from the 'index.js' file in Components
 
+```js
+import Links from './Links'
+import Logo from './Logo'
+import NavBar from './NavBar'
+
+export { Links, Logo, NavBar }
+```
+
+The NavBar imports the logo and the links, so you only need to import the NavBar to the app/index/js file and add the JSX in the render
+
+**app/index.js**
+
+```js
+
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import { NavBar } from '../components'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+function App() {
+    return (
+        <Router>
+            <NavBar />
+        </Router>
+    )
+}
+
+export default App
+```
+
+
+## Integrate back-end and front-end
+
+update the **api/index.js** file
+
+```js
+import axios from 'axios'
+
+const api = axios.create({
+    baseURL: 'http://localhost:3000/api',
+})
+
+export const insertMovie = payload => api.post(`/movie`, payload)
+export const getAllMovies = () => api.get(`/movies`)
+export const updateMovieById = (id, payload) => api.put(`/movie/${id}`, payload)
+export const deleteMovieById = id => api.delete(`/movie/${id}`)
+export const getMovieById = id => api.get(`/movie/${id}`)
+
+const apis = {
+    insertMovie,
+    getAllMovies,
+    updateMovieById,
+    deleteMovieById,
+    getMovieById,
+}
+
+export default apis
+```
+
+Develop the routes in **app/index.js**
+
+```js
+
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import { NavBar } from '../components'
+import { MoviesList, MoviesInsert, MoviesUpdate } from '../pages'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+function App() {
+    return (
+        <Router>
+            <NavBar />
+            <Switch>
+                <Route path="/movies/list" exact component={MoviesList} />
+                <Route path="/movies/create" exact component={MoviesInsert} />
+                <Route
+                    path="/movies/update/:id"
+                    exact
+                    component={MoviesUpdate}
+                />
+            </Switch>
+        </Router>
+    )
+}
+
+export default App
+```
+
+then create the files in the pages folder that will handle the relevant application's page:
+
+```touch MoviesList.jsx MoviesInsert.jsx MoviesUpdate.jsx```
+
+Add some simple elements to each of the files then check that the navigation is working:
+
+
+Example is for MoviesInsert:
+
+```js
+import React, { Component } from 'react'
+
+class MoviesInsert extends Component {
+    render() {
+        return (
+            <div>
+                <p>In this page you'll see the form to add a movies</p>
+            </div>
+        )
+    }
+}
+
+export default MoviesInsert
+```
