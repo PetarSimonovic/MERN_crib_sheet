@@ -404,7 +404,9 @@ $ cd src
 $ mkdir api app components pages style
 ```
 
-Each folder also needs an index.js file. Move the App.js file to the app directory and rename it to 'index.js', then create the others:
+Each folder also needs an index.js file. 
+
+Move the App.js file to the app directory and rename it to 'index.js', then create the others:
 
 ```
 $ touch api/index.js components/index.js pages/index.js style/index.js
