@@ -103,7 +103,7 @@ $ mkdir db
 $ touch index.js
 ```
 
-**db/index.js** should contain:
+**db/index.js** should contain the following (Note that the database name for this example is 'cinema'):
 
 ```js
 
