@@ -68,9 +68,9 @@ app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
 
 run ```node index.js```
 
-If everything is set up properly you should see a message stating "Server running on port 3000"
+If everything is set up properly you should see a message stating "Server running on port 8000"
 
-Go to localhost/3000 in a browser and you should see "Hello world!"
+Go to localhost/8000 in a browser and you should see "Hello world!"
 
 
 ### Set-up MongoDB
@@ -342,7 +342,7 @@ const db = require('./db')
 const movieRouter = require('./routes/movie-router')
 
 const app = express()
-const apiPort = 3000
+const apiPort = 8000
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
@@ -375,7 +375,7 @@ $ npx create-react-app client
 
 ```
 
-Once installed, make sure that react is on a different port to the back-end (ie, in example above the port is 3000 for the backend)
+Once installed, make sure that react is on a different port to the back-end (ie, in example above the port is 8000 for the backend - React uses 3000 as default)
 
 Run ```yarn start``` in the client folder and the React default page should load.
 
@@ -585,7 +585,7 @@ update the **api/index.js** file
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'http://localhost:8000/api',
 })
 
 export const insertMovie = payload => api.post(`/movie`, payload)
